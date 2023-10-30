@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <title>Archive</title>
+</head>
+<body>
+  <div class="header">
+    <h1>Zoning-out Archive</h1>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+     
+      <div class="dropdown">
+          <a href="#">Original</a>
+          <div class="dropdown-content">
+              <a href="original2017.html">2017</a>
+              <a href="original2018.html">2018</a>
+              <a href="original2019.html">2019</a>
+              <a href="original2020.html">2020</a>
+              <a href="original2021.html">2021</a>
+              <a href="original2022.html">2022</a>
+              <a href="original2023.html">2023</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Mermay</a>
+        <div class="dropdown-content">
+            <a href="mermay2017.html">2017</a>
+            <a href="mermay2018.html">2018</a>
+            <a href="mermay2019.html">2019</a>
+            <a href="mermay2020.html">2020</a>
+            <a href="mermay2021.html">2021</a>
+            <a href="mermay2022.html">2022</a>
+            <a href="mermay2023.html">2023</a>
+        </div>
+    </div>
+      <a href="zodiac.html">Zodiac</a>
+      <a href="witches.html">Witches</a>
+      <a href="elementals.html">Elementals</a>
+      
+  </div>
+    
+</div></header>
+    <div class="content-container">
+      <div class="half left">
+        <div class="content">
+          <div class="buttons-container">
+            <div class="button-row">
+              <button class="button"><img src="../images/btns/whitefishmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/sealionmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/tigerfishmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/lookingprettybtn.jpg"></button>
+              <button class="button"><img src="../images/btns/lovefishbtn.jpg"></button>
+              
+            </div>
+            <div class="button-row">
+              <button class="button"><img src="../images/btns/purplejellyfishbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/blueoctopusbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/greeneelmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/airelemental1btn.jpg"></button>
+              <button class="button"><img src="../images/btns/toxicmermaidbtn.jpg"></button>
+            </div>
+            <div class="button-row">
+              <button class="button"><img src="../images/btns/evilmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/volcanomermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/swampmermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/beachbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/goldfishmermaidbtn.jpg"></button>
+            </div>
+            <div class="button-row">
+              <button class="button"><img src="../images/btns/seahorsebtn.jpg"></button>
+              <button class="button"><img src="../images/btns/lookingmirrorbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/purpledarkwaterbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/waterlilybtn.jpg"></button>
+              <button class="button"><img src="../images/btns/neondarkwaterbtn.jpg"></button>
+            </div>
+            <div class="button-row">
+              <button class="button"><img src="../images/btns/skymermaidbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/coralreef1btn.jpg"></button>
+              <button class="button"><img src="../images/btns/starvationbtn.jpg"></button>
+              <button class="button"><img src="../images/btns/relaxtionbtn.jpg"></button>
+           
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+
+
+      <div class="half right">
+        <div class="carousel">
+          <div class="carousel-container">
+            <img src="../images/libelle.jpg" alt="Image 1" class="active">
+            <img src="../images/blue.jpg" alt="Image 2">
+            <img src="../images/image3.jpg" alt="Image 3">
+            <img src="../images/parallaxforest.jpg" alt="Image 4">
+            <img src="../images/burningsun.jpg" alt="Image 5">
+            <img src="../images/pole.jpg" alt="Image 6">
+          </div>
+          <button class="carousel-button prev" onclick="prevSlide()">&#9664; </button>
+          <button class="carousel-button next" onclick="nextSlide()"> &#9654;</button>
+        </div>
+      </div>
+      
+
+
+      <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+    
+        function showSlide(slideIndex) {
+          if (slideIndex < 0) {
+            currentSlide = slides.length - 1;
+          } else if (slideIndex >= slides.length) {
+            currentSlide = 0;
+          } else {
+            currentSlide = slideIndex;
+          }
+    
+          slides.forEach((slide, index) => {
+            if (index === currentSlide) {
+              slide.style.display = 'block';
+            } else {
+              slide.style.display = 'none';
+            }
+          });
+        }
+    
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+    
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+    
+        showSlide(currentSlide);
+      </script>
+
+
+
+
+
+  </div>
+  
+</body>
+</html>
